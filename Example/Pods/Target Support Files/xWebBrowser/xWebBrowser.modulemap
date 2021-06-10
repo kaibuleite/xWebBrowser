@@ -1,0 +1,6 @@
+framework module xWebBrowser {
+  umbrella header "xWebBrowser-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - xWebBrowser (0.1.0)
+
+DEPENDENCIES:
+  - xWebBrowser (from `../`)
+
+EXTERNAL SOURCES:
+  xWebBrowser:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  xWebBrowser: b14f687f038dcda1a6c33532b450daa0ec21ddf2
+
+PODFILE CHECKSUM: f95786741551da5570797ec17defd485f57f48c1
+
+COCOAPODS: 1.9.1

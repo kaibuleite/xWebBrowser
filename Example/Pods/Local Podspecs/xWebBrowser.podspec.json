@@ -1,0 +1,22 @@
+{
+  "name": "xWebBrowser",
+  "version": "0.1.0",
+  "summary": "A short description of xWebBrowser.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/177955297@qq.com/xWebBrowser",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "177955297@qq.com": "177955297@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/177955297@qq.com/xWebBrowser.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "xWebBrowser/Classes/**/*"
+}
