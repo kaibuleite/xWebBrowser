@@ -101,7 +101,9 @@ open class xWebBrowser: UIViewController {
     }
     
     // MARK: - Open Func
-    open class func quickInstancetype() -> Self {
+    /// 实例化对象
+    /// - Returns: 实例化对象
+    open class func xDefaultViewController() -> Self {
         let bundle = Bundle.init(for: self.classForCoder())
         let sb = UIStoryboard.init(name: "xWebBrowser", bundle: bundle)
         let vc = sb.instantiateInitialViewController()
