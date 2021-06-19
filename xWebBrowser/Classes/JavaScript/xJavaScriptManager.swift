@@ -16,7 +16,7 @@ public class xJavaScriptManager: NSObject, WKScriptMessageHandler {
     
     // MARK: - Private Property
     /// 弱引用浏览器
-    weak var xWeb : xWebBrowser?
+    weak var xWeb : xWebBrowserViewController?
     /// 回调
     var handler : xHandlerReceiveWebJS?
     

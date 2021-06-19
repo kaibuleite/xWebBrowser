@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04E7C1A426720974006C69FF /* xWebBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7C1A326720974006C69FF /* xWebBrowser.swift */; };
-		04E7C1A9267209B7006C69FF /* xWebBrowser+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7C1A8267209B7006C69FF /* xWebBrowser+WKNavigationDelegate.swift */; };
+		04E7C1A426720974006C69FF /* xWebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7C1A326720974006C69FF /* xWebBrowserViewController.swift */; };
+		04E7C1A9267209B7006C69FF /* xWebBrowserViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7C1A8267209B7006C69FF /* xWebBrowserViewController+WKNavigationDelegate.swift */; };
 		1F35D04D8D456C4DCADC339C063FA6CA /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C5E6ED023C41F62AD24780B8F989A8 /* ReplaceMe.swift */; };
 		5F6BAC089C90F2E1577B908C235AFCD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		634882C2AC466DBD12DCC93FC536503B /* Pods-xWebBrowser_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC7958FF4402095CEE81DE92F3AF815 /* Pods-xWebBrowser_Tests-dummy.m */; };
@@ -19,7 +19,7 @@
 		CF6A2805BEC5B7748DE937026A0535DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		EE76EB869EF1009F9C2E214668E01276 /* Pods-xWebBrowser_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B58D7B6AF7A78E2C23D9B9851996B05 /* Pods-xWebBrowser_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F384FF6163B6F5EE44F23D5A5A8A2F29 /* Pods-xWebBrowser_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9F890DE34E2E84199B5123B3415499 /* Pods-xWebBrowser_Example-dummy.m */; };
-		FE799F41E9E123F08FADF867476384D3 /* xWebBrowser.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 074FF75D001424D5DCE11454CEC472A0 /* xWebBrowser.storyboard */; };
+		FE799F41E9E123F08FADF867476384D3 /* xWebBrowserViewController.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 074FF75D001424D5DCE11454CEC472A0 /* xWebBrowserViewController.storyboard */; };
 		FFB72C11933A37D4A5AC88BFD273390C /* xWebBrowser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F91EEC405F554145047AB1F36DF1DC2A /* xWebBrowser-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -41,9 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04E7C1A326720974006C69FF /* xWebBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xWebBrowser.swift; sourceTree = "<group>"; };
-		04E7C1A8267209B7006C69FF /* xWebBrowser+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "xWebBrowser+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
-		074FF75D001424D5DCE11454CEC472A0 /* xWebBrowser.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = xWebBrowser.storyboard; sourceTree = "<group>"; };
+		04E7C1A326720974006C69FF /* xWebBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xWebBrowserViewController.swift; sourceTree = "<group>"; };
+		04E7C1A8267209B7006C69FF /* xWebBrowserViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "xWebBrowserViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
+		074FF75D001424D5DCE11454CEC472A0 /* xWebBrowserViewController.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = xWebBrowserViewController.storyboard; sourceTree = "<group>"; };
 		126EE55F07D8F3CAB776BC4C16297E15 /* xWebBrowser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "xWebBrowser-umbrella.h"; sourceTree = "<group>"; };
 		180278E6B02627FDB233B2AC5F311134 /* Pods-xWebBrowser_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-xWebBrowser_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1B58D7B6AF7A78E2C23D9B9851996B05 /* Pods-xWebBrowser_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-xWebBrowser_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -245,9 +245,9 @@
 		F8B111228FDE853835DB3728FBFD6B5D /* Browser */ = {
 			isa = PBXGroup;
 			children = (
-				074FF75D001424D5DCE11454CEC472A0 /* xWebBrowser.storyboard */,
-				04E7C1A326720974006C69FF /* xWebBrowser.swift */,
-				04E7C1A8267209B7006C69FF /* xWebBrowser+WKNavigationDelegate.swift */,
+				074FF75D001424D5DCE11454CEC472A0 /* xWebBrowserViewController.storyboard */,
+				04E7C1A326720974006C69FF /* xWebBrowserViewController.swift */,
+				04E7C1A8267209B7006C69FF /* xWebBrowserViewController+WKNavigationDelegate.swift */,
 			);
 			name = Browser;
 			path = xWebBrowser/Classes/Browser;
@@ -416,9 +416,9 @@
 				1F35D04D8D456C4DCADC339C063FA6CA /* ReplaceMe.swift in Sources */,
 				FFB72C11933A37D4A5AC88BFD273390C /* xWebBrowser-dummy.m in Sources */,
 				68DC063C4F988F93474329BDAB02A43A /* xJavaScriptManager.swift in Sources */,
-				04E7C1A9267209B7006C69FF /* xWebBrowser+WKNavigationDelegate.swift in Sources */,
-				FE799F41E9E123F08FADF867476384D3 /* xWebBrowser.storyboard in Sources */,
-				04E7C1A426720974006C69FF /* xWebBrowser.swift in Sources */,
+				04E7C1A9267209B7006C69FF /* xWebBrowserViewController+WKNavigationDelegate.swift in Sources */,
+				FE799F41E9E123F08FADF867476384D3 /* xWebBrowserViewController.storyboard in Sources */,
+				04E7C1A426720974006C69FF /* xWebBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

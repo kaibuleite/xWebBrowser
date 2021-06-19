@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Web Browser-->
+        <!--Web Browser View Controller-->
         <scene sceneID="TdM-Nm-CBM">
             <objects>
-                <viewController id="8Qz-p7-mna" customClass="xWebBrowser" customModule="xWebBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8Qz-p7-mna" customClass="xWebBrowserViewController" customModule="xWebBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NGN-t3-hWJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

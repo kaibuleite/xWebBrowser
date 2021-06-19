@@ -1,5 +1,5 @@
 //
-//  xWebBrowser+WKNavigationDelegate.swift
+//  xWebBrowserViewController+WKNavigationDelegate.swift
 //  xWebBrowser
 //
 //  Created by Mac on 2021/6/10.
@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 // MARK: - WKNavigationDelegate
-extension xWebBrowser: WKNavigationDelegate {
+extension xWebBrowserViewController: WKNavigationDelegate {
     
     /// 准备加载页面
     public func webView(_ webView: WKWebView,

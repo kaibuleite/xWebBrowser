@@ -1,5 +1,5 @@
 //
-//  xWebBrowser.swift
+//  xWebBrowserViewController.swift
 //  xWebBrowser
 //
 //  Created by Mac on 2021/6/10.
@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 /// 方法详情可以参考 https://www.jianshu.com/p/747b7a1dfd06
-open class xWebBrowser: UIViewController {
+open class xWebBrowserViewController: UIViewController {
 
     // MARK: - Handle
     /// 点击关闭按钮回调
