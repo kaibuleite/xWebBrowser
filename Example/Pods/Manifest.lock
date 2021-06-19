@@ -1,16 +1,27 @@
 PODS:
-  - xWebBrowser (0.1.0)
+  - xDefine (1.0.2)
+  - xExtension (1.0.8):
+    - xDefine
+  - xWebBrowser (1.0.2):
+    - xExtension
 
 DEPENDENCIES:
   - xWebBrowser (from `../`)
+
+SPEC REPOS:
+  https://github.com/kaibuleite/xSpecs.git:
+    - xDefine
+    - xExtension
 
 EXTERNAL SOURCES:
   xWebBrowser:
     :path: "../"
 
 SPEC CHECKSUMS:
-  xWebBrowser: b14f687f038dcda1a6c33532b450daa0ec21ddf2
+  xDefine: 0df7b51c0e6edb71ca9fd667f728699d0a7a1b12
+  xExtension: f53765a72cdb40b8dd8106f37c426d7b4084ba05
+  xWebBrowser: 0b72300c430a23567e53d8079d2b5bc2a050df03
 
-PODFILE CHECKSUM: f95786741551da5570797ec17defd485f57f48c1
+PODFILE CHECKSUM: 8d9fcbe151caadfe3b2b12e1b2e0e724a248c171
 
 COCOAPODS: 1.9.1
