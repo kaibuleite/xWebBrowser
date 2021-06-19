@@ -291,10 +291,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-xWebBrowser_Example/Pods-xWebBrowser_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/xDefine/xDefine.framework",
+				"${BUILT_PRODUCTS_DIR}/xExtension/xExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/xWebBrowser/xWebBrowser.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/xDefine.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/xExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/xWebBrowser.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

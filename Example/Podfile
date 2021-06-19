@@ -1,5 +1,9 @@
-use_frameworks!
+# 清华大学源
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+# 私有源
+source 'https://github.com/kaibuleite/xSpecs.git'
 
+use_frameworks!
 platform :ios, '9.0'
 
 target 'xWebBrowser_Example' do
