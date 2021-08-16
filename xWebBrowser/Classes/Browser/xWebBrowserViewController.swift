@@ -87,7 +87,7 @@ open class xWebBrowserViewController: UIViewController {
         self.progressView.trackTintColor = .groupTableViewBackground
         self.progressView.isHidden = true
         self.safeView.addSubview(self.progressView)
-        self.safeView.bringSubview(toFront: self.closeBtn)
+        self.safeView.bringSubviewToFront(self.closeBtn)
         // 其他
         self.addObserver()
     }
@@ -143,7 +143,7 @@ open class xWebBrowserViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
             return
         }
-        if self.isEqual(nvc.childViewControllers.first) == false {
+        if self.isEqual(nvc.children.first) == false {
             nvc.popViewController(animated: true)
             return
         }

@@ -8,8 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'xWebBrowser'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'Swift xWebBrowser.'
+  s.swift_version    = '5'      # Swift版本号
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -40,4 +41,5 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
     s.dependency 'xExtension'
+    
 end
