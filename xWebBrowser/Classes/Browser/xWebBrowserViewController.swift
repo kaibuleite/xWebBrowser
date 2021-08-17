@@ -59,6 +59,7 @@ open class xWebBrowserViewController: UIViewController {
         self.web.navigationDelegate = nil
         self.closeWebHandler = nil
         self.reloadCompletedHandler = nil
+        print("🗑 xWebBrowserViewController")
     }
     
     // MARK: - Open Override Func
@@ -66,7 +67,7 @@ open class xWebBrowserViewController: UIViewController {
     /// - Returns: 实例化对象
     open override class func xDefaultViewController() -> Self {
         let bundle = Bundle.init(for: self.classForCoder())
-        let sb = UIStoryboard.init(name: "xWebBrowser", bundle: bundle)
+        let sb = UIStoryboard.init(name: "xWebBrowserViewController", bundle: bundle)
         let vc = sb.instantiateInitialViewController()
         return vc as! Self
     }
