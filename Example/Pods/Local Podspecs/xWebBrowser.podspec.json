@@ -1,7 +1,8 @@
 {
   "name": "xWebBrowser",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "summary": "Swift xWebBrowser.",
+  "swift_versions": "5",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/kaibuleite/xWebBrowser",
   "license": {
@@ -13,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/kaibuleite/xWebBrowser.git",
-    "tag": "1.0.3"
+    "tag": "1.0.5"
   },
   "platforms": {
     "ios": "9.0"
@@ -23,5 +24,6 @@
     "xExtension": [
 
     ]
-  }
+  },
+  "swift_version": "5"
 }
