@@ -36,6 +36,9 @@ open class xWebBrowserViewController: UIViewController {
         }
     }
     
+    // MARK: - Public Property
+    public var contentSize = CGSize.zero
+    
     // MARK: - Private Property
     /// JavaScript 管理器
     let jsMgr = xJavaScriptManager()

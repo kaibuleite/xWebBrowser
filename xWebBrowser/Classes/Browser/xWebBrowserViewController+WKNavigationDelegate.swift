@@ -36,6 +36,7 @@ extension xWebBrowserViewController: WKNavigationDelegate {
         print("导航发生错误 \(error.localizedDescription)")
         // 隐藏加载进度条
         self.progressView.isHidden = true
+        self.contentSize = webView.scrollView.contentSize
         self.reloadCompletedHandler?(false)
     }
     
@@ -47,6 +48,7 @@ extension xWebBrowserViewController: WKNavigationDelegate {
         print("网页加载内容时发生错误时 \(error.localizedDescription)")
         // 隐藏加载进度条
         self.progressView.isHidden = true
+        self.contentSize = webView.scrollView.contentSize
         self.reloadCompletedHandler?(false)
     }
     
@@ -63,6 +65,7 @@ extension xWebBrowserViewController: WKNavigationDelegate {
     {
         print("网页加载完成")
         self.progressView.isHidden = true  // 隐藏加载进度条
+        self.contentSize = webView.scrollView.contentSize
         self.reloadCompletedHandler?(true)
     }
     

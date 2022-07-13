@@ -382,8 +382,8 @@
 		73910609E8D6FA3A9493480C1CF23DA2 /* Browser */ = {
 			isa = PBXGroup;
 			children = (
-				A24BDD38D352F6BEEA792129CF8F1952 /* xWebBrowserViewController.storyboard */,
 				846FDEBACAF2FAFF7CC936F7CEF71D13 /* xWebBrowserViewController.swift */,
+				A24BDD38D352F6BEEA792129CF8F1952 /* xWebBrowserViewController.storyboard */,
 				0115692A80D3EA5EBAB0EFEBB9B4CFE6 /* xWebBrowserViewController+WKNavigationDelegate.swift */,
 			);
 			name = Browser;
