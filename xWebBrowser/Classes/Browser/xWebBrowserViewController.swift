@@ -30,25 +30,18 @@ open class xWebBrowserViewController: UIViewController {
     /// 是否显示加载进度条(默认显示)
     @IBInspectable public var isShowLoadingProgress : Bool = true
     /// 进度条颜色
-    @IBInspectable public var loadingProgressColor : UIColor = UIColor.blue.withAlphaComponent(0.5) {
-        didSet {
-            self.progressView.progressTintColor = self.loadingProgressColor
-        }
-    }
+    @IBInspectable public var loadingProgressColor : UIColor = UIColor.blue.withAlphaComponent(0.5)
     
     // MARK: - Public Property
     public var contentSize = CGSize.zero
+    /// 浏览器主体
+    public let web = WKWebView.init(frame: .zero, configuration: .init())
+    /// JavaScript 管理器
+    public let jsMgr = xJavaScriptManager()
     
     // MARK: - Private Property
-    /// JavaScript 管理器
-    let jsMgr = xJavaScriptManager()
-    /// js事件名列表
-    var jsNameArray = [String]()
-    /// 进度条
+    /// 响应进度条
     let progressView = UIProgressView()
-    /// 浏览器主体
-    let web = WKWebView.init(frame: .zero,
-                             configuration: .init())
     /// 点击关闭按钮回调
     var closeWebHandler : xHandlerCloseWeb?
     /// 页面加载完成回调
@@ -67,12 +60,9 @@ open class xWebBrowserViewController: UIViewController {
     
     // MARK: - Open Override Func
     /// 实例化对象
-    /// - Returns: 实例化对象
     open override class func xDefaultViewController() -> Self {
-        let bundle = Bundle.init(for: self.classForCoder())
-        let sb = UIStoryboard.init(name: "xWebBrowserViewController", bundle: bundle)
-        let vc = sb.instantiateInitialViewController()
-        return vc as! Self
+        let vc = Self.xNew(storyboard: nil)
+        return vc
     }
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,20 +71,23 @@ open class xWebBrowserViewController: UIViewController {
         self.closeBtn.isHidden = !self.isShowCloseBtn
         self.progressView.isHidden = !self.isShowLoadingProgress
         self.progressView.progress = 0
-        self.jsMgr.xWeb = self
-        // web
-        self.web.allowsBackForwardNavigationGestures = true // 是否支持手势返回
-        self.web.navigationDelegate = self
-        self.safeView.addSubview(web)
+        self.jsMgr.currentWebBrowser = self
         // 进度条
         self.progressView.progressTintColor = self.loadingProgressColor
         self.progressView.trackTintColor = .groupTableViewBackground
         self.progressView.isHidden = true
         self.safeView.addSubview(self.progressView)
         self.safeView.bringSubviewToFront(self.closeBtn)
+        // 网页
+        self.web.allowsBackForwardNavigationGestures = true // 是否支持手势返回
+//        self.web.uiDelegate = self
+        self.web.navigationDelegate = self
+        self.safeView.addSubview(web)
         // 其他
         self.addObserver()
+        self.updateWebConfig()
     }
+    
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         var frame = self.view.bounds
@@ -102,6 +95,7 @@ open class xWebBrowserViewController: UIViewController {
         frame.size.height = 2
         self.progressView.frame = frame
     }
+    
     open override func observeValue(forKeyPath keyPath: String?,
                                     of object: Any?,
                                     change: [NSKeyValueChangeKey : Any]?,
@@ -111,6 +105,27 @@ open class xWebBrowserViewController: UIViewController {
             let progress = Float(self.web.estimatedProgress)
             self.progressView.progress = progress
         }
+    }
+    
+    // MARK: - IBAction Private Func
+    @IBAction func closeBtnClick()
+    {
+        if let handler = self.closeWebHandler {
+            // 如果有自定义关闭回调，则执行该回调
+            handler()
+            return
+        }
+        guard let nvc = self.navigationController else {
+            // 如果没有自带导航栏，则模态退出
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        if self.isEqual(nvc.children.first) == false {
+            // 自己不是导航栏根视图，则退出
+            nvc.popViewController(animated: true)
+            return
+        }
+        print("⚠️ 请添加关闭事件")
     }
     
     // MARK: - Open Func
@@ -135,42 +150,9 @@ open class xWebBrowserViewController: UIViewController {
         config.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
          */
     }
-    
-    // MARK: - IBAction Private Func
-    @IBAction func closeBtnClick()
-    {
-        if let handler = self.closeWebHandler {
-            handler()
-            return
-        }
-        guard let nvc = self.navigationController else {
-            self.dismiss(animated: true, completion: nil)
-            return
-        }
-        if self.isEqual(nvc.children.first) == false {
-            nvc.popViewController(animated: true)
-            return
-        }
-        print("⚠️ 请添加关闭事件")
-    }
-    
-    // MARK: - Public Func
-    /// 添加关闭回调（退出界面啥的）
-    /// - Parameter handler: 回调
-    public func addCloseWeb(handler : @escaping xHandlerCloseWeb)
-    {
-        self.closeBtn.isHidden = !self.isShowCloseBtn
-        self.closeWebHandler = handler
-    }
-    /// 添加页面加载完成回调
-    /// - Parameter handler: 回调
-    public func addReloadCompleted(handler : @escaping xHandlerReloadCompleted)
-    {
-        self.reloadCompletedHandler = handler
-    }
     /// 加载URL地址
     /// - Parameter str: 地址
-    public func load(url str: String)
+    open func load(url str: String)
     {
         guard let url = URL.init(string: str) else { return }
         let req = URLRequest.init(url: url)
@@ -178,10 +160,12 @@ open class xWebBrowserViewController: UIViewController {
     }
     /// 加载HTML字符串
     /// - Parameter html: HTML字符串
-    public func load(html : String)
+    open func load(html : String)
     {
         self.web.loadHTMLString(html, baseURL: nil)
     }
+    
+    // MARK: - Public Func
     /// 刷新当前网页
     public func reload()
     {
@@ -197,21 +181,37 @@ open class xWebBrowserViewController: UIViewController {
             print("缓存清理完成")
         }
     }
+    
+    // MARK: - 回调
+    /// 添加关闭回调（退出界面啥的）
+    /// - Parameter handler: 回调
+    public func addCloseWeb(handler : @escaping xHandlerCloseWeb)
+    {
+        self.closeBtn.isHidden = !self.isShowCloseBtn
+        self.closeWebHandler = handler
+    }
+    /// 添加页面加载完成回调
+    /// - Parameter handler: 回调
+    public func addReloadCompleted(handler : @escaping xHandlerReloadCompleted)
+    {
+        self.reloadCompletedHandler = handler
+    }
+    // MARK: - JS事件
     /// 添加 JS 事件
     public func addJavaScriptMethod(list : [String])
     {
         self.removeJavaScriptMethod()
-        self.jsNameArray = list
-        let uc = self.web.configuration.userContentController
-        self.jsNameArray.forEach {
-            [unowned self] (name) in
+        self.jsMgr.jsNameArray = list
+        let config = self.web.configuration
+        let uc = config.userContentController
+        for name in list {
             uc.add(self.jsMgr, name: name)
         }
     }
     /// 添加收到JS事件回调
     public func addReceiveJavaScriptMethod(handler : @escaping xJavaScriptManager.xHandlerReceiveWebJS)
     {
-        self.jsMgr.handler = handler
+        self.jsMgr.handlerReceive = handler
     }
     /// 调用JS事件
     public func evaluateJavaScript(code : String,
@@ -220,18 +220,18 @@ open class xWebBrowserViewController: UIViewController {
         self.web.evaluateJavaScript(code,
                                     completionHandler: handler)
     }
-    
-    // MARK: - Private Func
     /// 移除 JS 事件
-    private func removeJavaScriptMethod()
+    public func removeJavaScriptMethod()
     {
-        let uc = self.web.configuration.userContentController
-        self.jsNameArray.forEach {
-            (name) in
+        let config = self.web.configuration
+        let uc = config.userContentController
+        for name in self.jsMgr.jsNameArray {
             uc.removeScriptMessageHandler(forName: name)
         }
-        self.jsNameArray.removeAll()
+        self.jsMgr.jsNameArray.removeAll()
     }
+    
+    // MARK: - 观察者
     /// 添加观察者
     private func addObserver()
     {

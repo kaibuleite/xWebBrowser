@@ -67,6 +67,8 @@ extension xWebBrowserViewController: WKNavigationDelegate {
         self.progressView.isHidden = true  // 隐藏加载进度条
         self.contentSize = webView.scrollView.contentSize
         self.reloadCompletedHandler?(true)
+        
+        
     }
     
 }

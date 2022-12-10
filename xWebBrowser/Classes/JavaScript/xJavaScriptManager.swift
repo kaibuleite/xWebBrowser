@@ -14,16 +14,20 @@ public class xJavaScriptManager: NSObject, WKScriptMessageHandler {
     /// 收到JS事件回调
     public typealias xHandlerReceiveWebJS = (String, WKScriptMessage) -> Void
     
+    // MARK: - Public Property
+    /// js事件名列表
+    public var jsNameArray = [String]()
+    
     // MARK: - Private Property
     /// 弱引用浏览器
-    weak var xWeb : xWebBrowserViewController?
+    weak var currentWebBrowser : xWebBrowserViewController?
     /// 回调
-    var handler : xHandlerReceiveWebJS?
+    var handlerReceive : xHandlerReceiveWebJS?
     
     // MARK: - 内存释放
     deinit {
-        self.xWeb = nil
-        self.handler = nil
+        self.currentWebBrowser = nil
+        self.handlerReceive = nil
         print("🗑 xJavaScriptManager")
     }
     
@@ -34,6 +38,6 @@ public class xJavaScriptManager: NSObject, WKScriptMessageHandler {
         let name = message.name
         let msg = message
         // message.body
-        self.handler?(name, msg)
+        self.handlerReceive?(name, msg)
     }
 }
