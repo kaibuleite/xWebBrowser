@@ -61,7 +61,7 @@ open class xWebBrowserViewController: UIViewController {
     // MARK: - Open Override Func
     /// 实例化对象
     open override class func xDefaultViewController() -> Self {
-        let vc = Self.xNew(storyboard: nil)
+        let vc = Self.xNew(xib: nil)
         return vc
     }
     open override func viewDidLoad() {

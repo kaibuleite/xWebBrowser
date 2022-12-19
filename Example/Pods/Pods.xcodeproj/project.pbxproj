@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		023CF5117ABCAA062EB5AFB440FF0F2E /* xWebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4FBB8580ED6D596437ACACBAC8D82 /* xWebBrowserViewController.swift */; };
 		03120672F49351903E1E79322486DB7B /* View+xEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C9D7DD4BDB2032D501882D23D536F /* View+xEdit.swift */; };
+		041B765C29505D4D0059BD96 /* xWebBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041B765B29505D4D0059BD96 /* xWebBrowserViewController.xib */; };
 		0A5F6798E3E25CA42E063B93333F8728 /* Path+xNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202BFCB41351F3D8F41D016A55F4254 /* Path+xNew.swift */; };
 		0CEA737E916A45FDC1CAD64935D36DFB /* Array+xFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3D52762F11A5E3DA58F86F43E6EE90 /* Array+xFind.swift */; };
-		0DD7227766C6B0E268FC8A5318B6E527 /* xWebBrowserViewController.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = D4E82C13490C2943604FDAE4F8AEDB0C /* xWebBrowserViewController.storyboard */; };
 		0F6928991D4C1D6C45BCB7096D81B7DB /* Image+xEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DD597C3895B5033E836C332F04E2B8 /* Image+xEdit.swift */; };
 		134245A005515D41C8159BE3578B4162 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71592C203C635B36A3297CA54A836C7A /* ReplaceMe.swift */; };
 		166980AB3A10C22457256CDD35BB7EFE /* xDefine-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 58F6CFA24D56F6ABE4CDB8A90B8B85F0 /* xDefine-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -123,6 +123,7 @@
 
 /* Begin PBXFileReference section */
 		001D003CADBAE3015A7B24E75747A252 /* xExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = xExtension.release.xcconfig; sourceTree = "<group>"; };
+		041B765B29505D4D0059BD96 /* xWebBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = xWebBrowserViewController.xib; sourceTree = "<group>"; };
 		0805FC3AE8AF36A99335BA4F863C014B /* Layer+xEdit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Layer+xEdit.swift"; path = "xExtension/Classes/Kit/Layer/Layer+xEdit.swift"; sourceTree = "<group>"; };
 		0BA6D5B08B0998E7B3CB10DCEA33BC5E /* String+xReplace.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+xReplace.swift"; path = "xExtension/Classes/Object/String/String+xReplace.swift"; sourceTree = "<group>"; };
 		0C824FF4B68CB8B7E3547F2F216B3BD2 /* ViewController+xNew.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ViewController+xNew.swift"; path = "xExtension/Classes/Kit/ViewController/ViewController+xNew.swift"; sourceTree = "<group>"; };
@@ -207,7 +208,6 @@
 		D34B05EF7582CE586423134632BB1C55 /* xDefine */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = xDefine; path = xDefine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4182AE7577B7A291B0A14D3DD5716F7 /* String+xRect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+xRect.swift"; path = "xExtension/Classes/Object/String/String+xRect.swift"; sourceTree = "<group>"; };
 		D4351C31F7FC5D9456557C5D63AC4805 /* Color+xNew.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Color+xNew.swift"; path = "xExtension/Classes/Kit/Color/Color+xNew.swift"; sourceTree = "<group>"; };
-		D4E82C13490C2943604FDAE4F8AEDB0C /* xWebBrowserViewController.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = xWebBrowserViewController.storyboard; sourceTree = "<group>"; };
 		D9C989D8FF2768E223F46164FBE9CC4E /* Image+xAlbum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Image+xAlbum.swift"; path = "xExtension/Classes/Kit/Image/Image+xAlbum.swift"; sourceTree = "<group>"; };
 		DF1C9D7DD4BDB2032D501882D23D536F /* View+xEdit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "View+xEdit.swift"; path = "xExtension/Classes/Kit/View/View+xEdit.swift"; sourceTree = "<group>"; };
 		E5003BF1684C5EADED9CC41E7D7B3798 /* xExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "xExtension-umbrella.h"; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				2AD4FBB8580ED6D596437ACACBAC8D82 /* xWebBrowserViewController.swift */,
-				D4E82C13490C2943604FDAE4F8AEDB0C /* xWebBrowserViewController.storyboard */,
+				041B765B29505D4D0059BD96 /* xWebBrowserViewController.xib */,
 				E6B0016D98FCB696038947A2C4730A00 /* xWebBrowserViewController+WKNavigationDelegate.swift */,
 			);
 			name = Browser;
@@ -724,6 +724,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041B765C29505D4D0059BD96 /* xWebBrowserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,7 +738,6 @@
 				CBB5A1C936386CB8608F4017B21E31F0 /* ReplaceMe.swift in Sources */,
 				392F901AD316155B5ADE255822AF79CB /* xJavaScriptManager.swift in Sources */,
 				A0FEE055D88D34C97401700D34A3428D /* xWebBrowser-dummy.m in Sources */,
-				0DD7227766C6B0E268FC8A5318B6E527 /* xWebBrowserViewController.storyboard in Sources */,
 				023CF5117ABCAA062EB5AFB440FF0F2E /* xWebBrowserViewController.swift in Sources */,
 				54F306CF2CC6A0770D8DAF493367AFBC /* xWebBrowserViewController+WKNavigationDelegate.swift in Sources */,
 			);
