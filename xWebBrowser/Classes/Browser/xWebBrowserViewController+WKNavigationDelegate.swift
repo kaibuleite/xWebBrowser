@@ -125,7 +125,8 @@ extension xWebBrowserViewController: WKNavigationDelegate {
                       decidePolicyFor navigationAction: WKNavigationAction,
                       decisionHandler: @escaping (WKNavigationActionPolicy) -> Void)
     {
-        
+        decisionHandler(.allow)
+        return
     }
     
     /// 决定是否在其响应已知之后允许或取消导航，在收到响应后，决定是否跳转
@@ -137,7 +138,8 @@ extension xWebBrowserViewController: WKNavigationDelegate {
                       decidePolicyFor navigationResponse: WKNavigationResponse,
                       decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void)
     {
-        
+        decisionHandler(.allow)
+        return
     }
      
 }

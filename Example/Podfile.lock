@@ -1,8 +1,8 @@
 PODS:
-  - xDefine (1.0.5)
-  - xExtension (1.1.4):
+  - xDefine (1.0.7)
+  - xExtension (1.1.8):
     - xDefine
-  - xWebBrowser (1.0.7):
+  - xWebBrowser (1.1.1):
     - xExtension
 
 DEPENDENCIES:
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  xDefine: 4d633701f2ee5ed5112c4be111ff0c43d49fb85d
-  xExtension: f932ec5d6498afe2dc4595adeda0514ee5658a6d
-  xWebBrowser: 4eea0ed07b2c38ef95e36b26c5be31f5d4bb58f4
+  xDefine: e9216a8c29a4a5abce78630e311449182c79a7f3
+  xExtension: 410b32f4a0377e4962082c7d1315b4b77454f7aa
+  xWebBrowser: 03eb666a1caf2069a9c12b3bfe448a3e2af86495
 
-PODFILE CHECKSUM: f3d75a0a9aaa4761c3123da69e438e4120eeb411
+PODFILE CHECKSUM: cee2db3b16639619be943826951b6324add50b98
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2
